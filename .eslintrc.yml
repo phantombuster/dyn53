@@ -1,0 +1,114 @@
+env:
+  browser: false
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 9
+  sourceType: module
+rules:
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - double
+  no-extra-semi:
+    - error
+  eqeqeq:
+    - error
+    - always
+  no-implied-eval:
+    - error
+  no-new-func:
+    - error
+  no-new-wrappers:
+    - error
+  no-void:
+    - error
+  wrap-iife:
+    - error
+    - any
+  radix:
+    - error
+    - always
+  yoda:
+    - error
+    - never
+  comma-dangle:
+    - error
+    - only-multiline
+  no-array-constructor:
+    - error
+  no-var:
+    - error
+  no-empty:
+    - error
+  no-debugger:
+    - error
+  no-unreachable:
+    - error
+  no-caller:
+    - error
+  no-with:
+    - error
+  eol-last:
+    - warn
+    - always
+  no-constant-condition:
+    - off
+  no-console:
+    - off
+  no-mixed-spaces-and-tabs:
+    - off
+  no-multi-spaces:
+    - warn
+  no-return-await:
+    - error
+  no-sequences:
+    - error
+  no-useless-call:
+    - error
+  no-useless-concat:
+    - error
+  no-undefined:
+    - error
+  no-undef-init:
+    - error
+  brace-style:
+    - warn
+    - 1tbs
+    - allowSingleLine: true
+  require-await:
+    - error
+  block-spacing:
+    - warn
+  space-in-parens:
+    - warn
+  space-before-function-paren:
+    - warn
+    - anonymous: never
+      named: never
+      asyncArrow: always
+  keyword-spacing:
+    - warn
+  space-infix-ops:
+    - warn
+  no-new-object:
+    - error
+  no-nested-ternary:
+    - error
+  no-multi-assign:
+    - warn
+  no-lonely-if:
+    - warn
+  new-parens:
+    - error
+  new-cap:
+    - error
+  max-statements-per-line:
+    - warn
+    - max: 2
+  max-nested-callbacks:
+    - warn
+    - max: 3

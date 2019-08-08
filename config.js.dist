@@ -1,0 +1,9 @@
+module.exports = [
+	{
+		domain: "example.com",
+		auth: "xxx", // 'auth' querystring param that the client must provide
+		accessKeyId: "yyy", // IAM user that has a minimal write policy for the target Route53 zone (see readme)
+		secretAccessKey: "zzz",
+		hostedZoneId: "aaa", // id of a Route53 zone managing the domain
+	},
+]
