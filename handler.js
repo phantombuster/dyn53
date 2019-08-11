@@ -41,17 +41,33 @@ module.exports.updateRecord = async (event) => {
 
 	const route53 = new Route53({
 		apiVersion: "2013-04-01",
+		accessKeyId: config.accessKeyId,
+		secretAccessKey: config.secretAccessKey,
 	})
+
+	const res = await route53.changeResourceRecordSets({
+		ChangeBatch: {
+			Changes: [
+				{
+					Action: "UPSERT",
+					ResourceRecordSet: {
+						Name: config.domain,
+						ResourceRecords: [
+							{
+								Value: sourceIp,
+							},
+						],
+						TTL: 3600 * 3, // 3 hours
+						Type: "A",
+					},
+				},
+			],
+		},
+		HostedZoneId: config.hostedZoneId
+	}).promise()
 
 	return {
 		statusCode: 200,
-		body: JSON.stringify(
-			{
-				message: "Go Serverless v1.0! Your function executed successfully!",
-				input: event,
-			},
-			null,
-			2
-		),
+		body: JSON.stringify(res),
 	}
 }
