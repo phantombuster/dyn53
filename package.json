@@ -4,6 +4,6 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "aws-sdk": "^2.504.0"
+        "aws-sdk": "^2.814.0"
     }
 }
